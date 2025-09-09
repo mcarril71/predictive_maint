@@ -88,7 +88,6 @@
   "schema": {
     "columns": [
       {"name":"Asset","type":"string"},
-      {"name":"Time","type":"int"},
       {"name":"Reason","type":"string"},
       {"name":"Part","type":"string"},
       {"name":"Quantity","type":"int"}
