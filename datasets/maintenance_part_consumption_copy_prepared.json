@@ -66,12 +66,12 @@
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1757365362441
+    "lastModifiedOn": 1757365378668
   },
   "tags": [],
   "params": {
     "connection": "filesystem_managed",
-    "path": "${projectKey}/maintenance_part_consumption_copy",
+    "path": "${projectKey}/maintenance_part_consumption_copy_prepared",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
@@ -88,7 +88,6 @@
   "schema": {
     "columns": [
       {"name":"Asset","type":"string"},
-      {"name":"Time","type":"int"},
       {"name":"Reason","type":"string"},
       {"name":"Part","type":"string"},
       {"name":"Quantity","type":"int"}

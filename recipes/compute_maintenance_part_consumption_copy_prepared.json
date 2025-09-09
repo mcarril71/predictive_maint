@@ -1,26 +1,16 @@
 {
-  "type": "sync",
+  "type": "shaker",
   "neverRecomputeExistingPartitions": false,
   "params": {
-    "schemaMode": "STRICT_SYNC",
-    "forcePipelineableForTests": false,
     "engineParams": {
-      "maxThreads": 4,
-      "tdchParams": {
-        "splitMode": "DEFAULT",
-        "numberOfExecutors": 2
-      },
-      "synapseParams": {
-        "usePolybase": false
-      },
-      "sparkSQL": {
-        "overwriteOutputSchema": false,
-        "useGlobalMetastore": false,
+      "spark": {
         "readParams": {
           "mode": "AUTO",
           "autoModeRepartitionInto": 10,
           "map": {}
         },
+        "useGlobalMetastore": false,
+        "useNativeProcessors": true,
         "sparkConfig": {
           "inheritConf": "default",
           "conf": []
@@ -30,9 +20,6 @@
         "pipelineAllowMerge": true,
         "skipPrerunValidate": false
       },
-      "impala": {
-        "forceStreamMode": true
-      },
       "hive": {
         "inheritConf": "default",
         "hiveconf": [],
@@ -40,11 +27,15 @@
         "addDkuUdf": false,
         "skipPrerunValidate": false
       },
+      "impala": {
+        "forceStreamMode": true
+      },
+      "hadoopConfigKeys": [],
       "sqlPipelineParams": {
         "pipelineAllowStart": true,
         "pipelineAllowMerge": true
       },
-      "lowerCaseSchemaIfEngineRequiresIt": false,
+      "maxThreads": 8,
       "containerSelection": {
         "containerMode": "INHERIT"
       }
@@ -62,7 +53,7 @@
     "main": {
       "items": [
         {
-          "ref": "maintenance_part_consumption",
+          "ref": "maintenance_part_consumption_copy",
           "deps": []
         }
       ]
@@ -72,7 +63,7 @@
     "main": {
       "items": [
         {
-          "ref": "maintenance_part_consumption_copy",
+          "ref": "maintenance_part_consumption_copy_prepared",
           "appendMode": false
         }
       ]
@@ -84,7 +75,7 @@
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1757365362449
+    "lastModifiedOn": 1757365378683
   },
   "tags": [],
   "customFields": {},
