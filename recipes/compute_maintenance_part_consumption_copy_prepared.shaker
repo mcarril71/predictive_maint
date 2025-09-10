@@ -77,7 +77,7 @@
       "disabled": false,
       "type": "CreateColumnWithGREL",
       "params": {
-        "expression": "Quantity * val(10)",
+        "expression": "Quantity * 100",
         "column": "calculation",
         "errorColumn": ""
       },
