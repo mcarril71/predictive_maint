@@ -17,6 +17,10 @@
       {
         "d": true,
         "name": "Quantity"
+      },
+      {
+        "d": true,
+        "name": "calculation"
       }
     ]
   },
@@ -66,6 +70,18 @@
         "appliesTo": "SINGLE_COLUMN"
       },
       "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "Quantity * val(10)",
+        "column": "calculation",
+        "errorColumn": ""
+      },
+      "alwaysShowComment": false
     }
   ],
   "maxProcessedMemTableBytes": -1,
@@ -95,6 +111,7 @@
   },
   "analysisColumnData": {},
   "columnWidthsByName": {
+    "calculation": 100,
     "Part": 100,
     "Asset": 100,
     "Quantity": 100,
